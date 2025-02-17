@@ -1,0 +1,37 @@
+<h3>予定の新規追加</h3>
+
+<%= form_with model: @post do |p| %>
+    <table>
+        <tr>
+            <th><%= p.label :title ,"タイトル" %></th>
+            <td><%= p.text_field :title ,placeholder: "ここにタイトルを入力してね" %></td>
+        </tr>
+
+        <tr>
+            <th><%= p.label :start_date ,"開始日" %></th>
+            <td><%= p.date_field :start_date %></td>
+        </tr>
+
+        <tr>
+            <th><%= p.label :end_date ,"終了日" %></th>
+            <td><%= p.date_field :end_date %></td>
+        </tr>
+
+        <tr>
+            <th><%= p.label :all_day ,"終日の場合はチェックを入れてください" %></th>
+            <td><%= p.check_box :all_day %></td>
+        </tr>
+
+        <tr>
+            <th><%= p.label :schedule_memo ,"スケジュールメモ" %></th>
+            <td><%= p.text_area :schedule_memo ,placeholder: "ここにメモを入力してね" %></td>
+        </tr>
+    </table>
+
+    <div>
+        <ul>
+            <li><%= p.submit "登録完了する" %></li>
+            <li><%= link_to "予定一覧に戻る", :posts %></li>
+        </ul>
+    </div>
+<% end %>
