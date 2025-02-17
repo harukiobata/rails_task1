@@ -8,6 +8,11 @@
 <span><%= link_to "新規追加", :new_post %></span>
 </div>
 
+
+<% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
 <table>
     <thead>
         <tr>
@@ -28,9 +33,9 @@
             <tr>
                 <td><%= post.id %></th>
                 <td><%= post.title %></th>
-                <td><%= post.start_date %></th>
-                <td><%= post.end_date %></th>
-                <td><%= post.all_day %></th>
+                <td><%= post.start_date.to_s(:date_jp) %></th>
+                <td><%= post.end_date.to_s(:date_jp) %></th>
+                <td><%= post.all_day ? "○" : "" %></th>
                 <td><%= post.updated_at.to_s(:datetime_jp) %></th>
                 <td>
                     <%= link_to "参照", post %>

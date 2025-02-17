@@ -5,10 +5,17 @@ class PostsController < ApplicationController
   end
 
   def new
-    @postv= Post.new
+    @post = Post.new
   end
 
   def create
+    @post = Post.new(params.require(:post).permit(:title, :start_date, :end_date, :all_day, :schedule_memo))
+    if @post.save
+      flash[:notice] = "新しい予定を追加しました"
+      redirect_to :posts
+    else
+      render "new"
+    end
   end
 
   def show
