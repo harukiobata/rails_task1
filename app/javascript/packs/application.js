@@ -7,6 +7,12 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import $ from 'jquery';
+window.$ = $;
+window.jQuery = $;
+import 'bootstrap'
+import '../stylesheets/application.scss'
+import './delete_modal'
 
 Rails.start()
 Turbolinks.start()

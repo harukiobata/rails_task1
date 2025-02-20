@@ -2,6 +2,26 @@
     <p>スケジュール管理アプリ</p>
 </header>
 <main>
+<!--削除用モーダル  -->
+<div class="modal" tabindex="-1" id="deleteModal" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">予定を削除しますか？</h5>
+        <button type="button" class="btn-close" id="closeModal" aria-label="Close"></button> <!-- idを変更 -->
+      </div>
+      <div class="modal-body">
+        <p>「<span id="post-title"></span>」を削除しますか？<br>この操作は取り消せません</p>
+      </div>
+      <div class="modal-footer">
+        <!-- キャンセルボタン -->
+        <button type="button" class="btn btn-secondary" id="cancelDeleteButton">キャンセル</button> <!-- idを変更 -->
+        <button type="button" id="confirmDelete" class="btn btn-danger">削除</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div>
 <span>予定一覧</span>
@@ -25,7 +45,7 @@
             <th>参照</th>
             <th>編集</th>
             <th>削除</th>
-        <tr>
+        </tr>
     </thead>
 
     <tbody>
@@ -44,7 +64,7 @@
                     <%= link_to "編集", [:edit, post] %>
                 </td>
                 <td>
-                    <%= link_to "削除", post_path(post), method: :delete %>
+                    <%= link_to '削除', '#', class: 'open-delete-modal' , data: { post_id: post.id, post_title: post.title} %>
                 </td>
             </tr>
         <% end %>
@@ -53,7 +73,7 @@
 </main>
 <footer>
     <h4>予定合計<%= @post_count %>件 </h4>
-    <p>本日の日付<%= Date.today %></p>
+    <p>本日の日付<%= Date.today.to_s(:date_jp) %></p>
 </footer>
 
 
