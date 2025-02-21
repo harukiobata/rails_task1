@@ -5,17 +5,22 @@
     <table>
         <tr>
             <th><%= p.label :title ,"タイトル" %></th>
-            <td><%= p.text_field :title ,placeholder: "ここにタイトルを入力してね" %></td>
-        </tr>
+            <td><%= p.text_field :title ,placeholder: "ここにタイトルを入力してね" %>
+            <%= render "shared/error_messages", obj: @post, attribute: :title %> 
+            </td>
 
         <tr>
             <th><%= p.label :start_date ,"開始日" %></th>
-            <td><%= p.date_field :start_date %></td>
+            <td><%= p.date_field :start_date %>
+            <%= render "shared/error_messages", obj: @post, attribute: :start_date %> 
+            </td>
         </tr>
 
         <tr>
             <th><%= p.label :end_date ,"終了日" %></th>
-            <td><%= p.date_field :end_date %></td>
+            <td><%= p.date_field :end_date %>
+            <%= render "shared/error_messages", obj: @post, attribute: :end_date %> 
+            </td>
         </tr>
 
         <tr>
@@ -25,7 +30,9 @@
 
         <tr>
             <th><%= p.label :schedule_memo ,"スケジュールメモ" %></th>
-            <td><%= p.text_area :schedule_memo ,placeholder: "ここにメモを入力してね" %></td>
+            <td><%= p.text_area :schedule_memo ,placeholder: "ここにメモを入力してね" %>
+            <%= render "shared/error_messages", obj: @post, attribute: :schedule_memo %> 
+            </td>
         </tr>
     </table>
 

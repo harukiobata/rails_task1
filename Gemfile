@@ -31,7 +31,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'concurrent-ruby', '1.3.4'
 
 gem 'bigdecimal'
+
 gem 'mutex_m'
+
+gem 'rails-i18n'
 
 
 group :development, :test do

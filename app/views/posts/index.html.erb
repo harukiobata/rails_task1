@@ -42,7 +42,7 @@
             <th>終了日</th>
             <th>終日</th>
             <th>更新日</th>
-            <th>参照</th>
+            <th>詳細</th>
             <th>編集</th>
             <th>削除</th>
         </tr>
@@ -58,13 +58,13 @@
                 <td><%= post.all_day ? "○" : "" %></th>
                 <td><%= post.updated_at.to_s(:datetime_jp) %></th>
                 <td>
-                    <%= link_to "参照", post %>
+                    <%= link_to "詳細", post %>
                 </td>
                 <td>
                     <%= link_to "編集", [:edit, post] %>
                 </td>
                 <td>
-                    <%= link_to '削除', '#', class: 'open-delete-modal' , data: { post_id: post.id, post_title: post.title} %>
+                    <%= link_to '削除',  '#', class: 'open-delete-modal' , data: { post_id: post.id, post_title: post.title} %>
                 </td>
             </tr>
         <% end %>
