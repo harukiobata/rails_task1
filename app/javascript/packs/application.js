@@ -13,6 +13,7 @@ window.jQuery = $;
 import 'bootstrap'
 import '../stylesheets/application.scss'
 import './delete_modal'
+import './date_calender'
 
 Rails.start()
 Turbolinks.start()

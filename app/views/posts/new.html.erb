@@ -1,6 +1,10 @@
 
 <h3>予定の新規追加</h3>
-
+<div>
+    <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+</div>  
 <%= form_with model: @post do |p| %>
     <table>
         <tr>
@@ -11,14 +15,14 @@
 
         <tr>
             <th><%= p.label :start_date ,"開始日" %></th>
-            <td><%= p.date_field :start_date %>
+            <td><%= p.date_field :start_date ,id: "start_date"%>
             <%= render "shared/error_messages", obj: @post, attribute: :start_date %> 
             </td>
         </tr>
 
         <tr>
             <th><%= p.label :end_date ,"終了日" %></th>
-            <td><%= p.date_field :end_date %>
+            <td><%= p.date_field :end_date ,id: "end_date"%>
             <%= render "shared/error_messages", obj: @post, attribute: :end_date %> 
             </td>
         </tr>
