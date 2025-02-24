@@ -1,7 +1,11 @@
 <header>
-    <p>スケジュール管理アプリ</p>
+  <div class="first-page-name-area">
+    <h3 class="first-page-name">スケジュール管理アプリ</h3>
+  </div>
 </header>
-<main>
+
+<main class="index-main">
+
 <!--削除用モーダル  -->
 <div class="modal" tabindex="-1" id="deleteModal" style="display: none;">
   <div class="modal-dialog">
@@ -11,7 +15,7 @@
         <button type="button" class="btn-close" id="closeModal" aria-label="Close"></button> <!-- idを変更 -->
       </div>
       <div class="modal-body">
-        <p>「<span id="post-title"></span>」を削除しますか？<br>この操作は取り消せません</p>
+        <p class="modal-body-message">「<span id="post-title"></span>」を削除しますか？<br>この操作は取り消せません</p>
       </div>
       <div class="modal-footer">
         <!-- キャンセルボタン -->
@@ -22,33 +26,36 @@
   </div>
 </div>
 
-
-<div>
-<span>予定一覧</span>
-<span><%= link_to "新規追加", :new_post %></span>
+<div class="schedule-heading-area">
+  <span class="schedule-heading-title">予定一覧</span>
+  <a href="<%= new_post_path %>" class="create-link-container">
+    <div class="create-link-background">
+      <span class="create-link-icon"></span>
+      <span class="schedule-create-link">新規追加</span>
+    </div>
+  </a>
 </div>
-
 
 <% if flash[:notice] %>
     <p class="notice"><%= flash[:notice] %></p>
 <% end %>
-
-<table>
-    <thead>
-        <tr>
+<div class="table-container">
+  <table>
+      <thead>
+          <tr>
             <th>ID</th>
-            <th>タイトル</th>
+            <th class="table-title">タイトル</th>
             <th>開始日</th>
             <th>終了日</th>
             <th>終日</th>
-            <th>更新日</th>
+            <th>更新日時</th>
             <th>詳細</th>
             <th>編集</th>
             <th>削除</th>
-        </tr>
-    </thead>
+          </tr>
+      </thead>
 
-    <tbody>
+      <tbody>
         <% @posts.each do |post| %>
             <tr>
                 <td><%= post.id %></th>
@@ -68,12 +75,15 @@
                 </td>
             </tr>
         <% end %>
-    </tbody>
-</table>
+      </tbody>
+  </table>
+</div>
 </main>
 <footer>
-    <h4>予定合計<%= @post_count %>件 </h4>
-    <p>本日の日付<%= Date.today.to_s(:date_jp) %></p>
+  <div class="total-and-today">
+    <h4 class="total-schedule">予定合計<%= @post_count %>件 </h4>
+    <p class="index-today">Today:<%= Date.today.to_s(:date_jp) %></p>
+  </div>
 </footer>
 
 
