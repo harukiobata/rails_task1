@@ -14,6 +14,7 @@ import 'bootstrap'
 import '../stylesheets/application.scss'
 import './delete_modal'
 import './date_calender'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 Rails.start()
 Turbolinks.start()

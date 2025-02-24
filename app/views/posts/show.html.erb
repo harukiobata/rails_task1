@@ -1,32 +1,39 @@
-<div>
-    <%= link_to "一覧に戻る", :posts %>
-</div>
+<header>
+  <div class="first-page-name-area">
+    <h3 class="first-page-name">スケジュール管理アプリ</h3>
+  </div>
+</header>
+<main>
+    <div class="show-index-link-div">
+        <%= link_to "←一覧に戻る", :posts ,class: "show-index-link" %>
+    </div>
 
-<div>
-    <ul>
-        <li><%= @post.title %></li>
-        <li><%= link_to "編集", :edit_post %></li>
-    </ul>
-</div>
+    <div class="show-title-and-edit-link">
+        <ul class="show-title-and-edit-link-div">
+            <li class="show-title"><%= @post.title %></li>
+            <li class="show-edit-link-area"><i class="bi-pencil"></i><%= link_to "編集", :edit_post ,class: "show-edit-link"%></li>
+        </ul>
+    </div>
 
-<table>
-    <tr>
-        <th>開始日</th>
-        <td><%= @post.start_date.to_s(:date_jp) %></td>
-    </tr>
+    <table class="show-table">
+        <tr class="show-table-tr">
+            <th class="show-table-th">開始日</th>
+            <td class="show-table-td"><%= @post.start_date.to_s(:date_jp) %></td>
+        </tr>
 
-    <tr>
-        <th>終了日</th>
-        <td><%= @post.end_date.to_s(:date_jp) %></td>
-    <tr>
+        <tr class="show-table-tr">
+            <th class="show-table-th">終了日</th>
+            <td class="show-table-td"><%= @post.end_date.to_s(:date_jp) %></td>
+        <tr>
 
-    <tr>
-        <th>終日</th>
-        <td><%= @post.all_day ? "○" : "" %></td>
-    <tr>
+        <tr class="show-table-tr">
+            <th class="show-table-th">終日</th>
+            <td class="show-table-td"><%= @post.all_day ? "○" : "" %></td>
+        <tr>
 
-    <tr>
-        <th>スケジュールメモ</th>
-        <td><%= @post.schedule_memo %></td>
-    <tr>
-</table>
+        <tr class="show-table-tr">
+            <th class="show-table-th">スケジュールメモ</th>
+            <td class="show-table-td"><%= @post.schedule_memo %></td>
+        <tr>
+    </table>
+</main>
