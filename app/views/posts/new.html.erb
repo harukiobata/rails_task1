@@ -1,49 +1,54 @@
-
-<h3>予定の新規追加</h3>
-<div>
-    <% if flash[:notice] %>
-        <p class="notice"><%= flash[:notice] %></p>
-    <% end %>
-</div>  
-<%= form_with model: @post do |p| %>
-    <table>
-        <tr>
-            <th><%= p.label :title ,"タイトル" %></th>
-            <td><%= p.text_field :title ,placeholder: "ここにタイトルを入力してね" %>
-            <%= render "shared/error_messages", obj: @post, attribute: :title %> 
-            </td>
-
-        <tr>
-            <th><%= p.label :start_date ,"開始日" %></th>
-            <td><%= p.date_field :start_date ,id: "start_date"%>
-            <%= render "shared/error_messages", obj: @post, attribute: :start_date %> 
-            </td>
-        </tr>
-
-        <tr>
-            <th><%= p.label :end_date ,"終了日" %></th>
-            <td><%= p.date_field :end_date ,id: "end_date"%>
-            <%= render "shared/error_messages", obj: @post, attribute: :end_date %> 
-            </td>
-        </tr>
-
-        <tr>
-            <th><%= p.label :all_day ,"終日の場合はチェックを入れてください" %></th>
-            <td><%= p.check_box :all_day %></td>
-        </tr>
-
-        <tr>
-            <th><%= p.label :schedule_memo ,"スケジュールメモ" %></th>
-            <td><%= p.text_area :schedule_memo ,placeholder: "ここにメモを入力してね" %>
-            <%= render "shared/error_messages", obj: @post, attribute: :schedule_memo %> 
-            </td>
-        </tr>
-    </table>
-
-    <div>
-        <ul>
-            <li><%= p.submit "登録完了する" %></li>
-            <li><%= link_to "予定一覧に戻る", :posts %></li>
-        </ul>
+<header>
+  <div class="first-page-name-area">
+    <h3 class="first-page-name">スケジュール管理アプリ</h3>
+  </div>
+</header>
+<main> 
+    <div class="new-heading-title-area">
+        <h5 class="new-heading-title">予定の新規追加</h5>
     </div>
+    <div>
+        <% if flash[:notice] %>
+            <p class="notice"><%= flash[:notice] %></p>
+        <% end %>
+    </div>  
+    <div class="new-create-all-field">
+
+        <%= form_with model: @post do |p| %>
+
+        <div class="new-create-title-field">
+            <p class="new-create-title"><%= p.label :title ,"タイトル" %></p>
+            <%= p.text_field :title ,placeholder: "ここにタイトルを入力してね" ,class:"new-create-title-write-field"%>
+            <%= render "shared/error_messages", obj: @post, attribute: :title %> 
+        </div>
+
+        <div class="new-create-start_date-field">
+            <p class="new-create-start_date"><%= p.label :start_date ,"開始日" %></p>
+            <%= p.date_field :start_date ,id: "start_date",class: "new-create-start_date-pick-field"%>
+            <%= render "shared/error_messages", obj: @post, attribute: :start_date %> 
+        </div>
+
+        <div class="new-create-end_date-field">
+            <p class="new-create-end_date"><%= p.label :end_date ,"終了日" %></p>
+            <%= p.date_field :end_date ,id: "end_date",class: "new-create-end_date-pick-field"%>
+            <%= render "shared/error_messages", obj: @post, attribute: :end_date %> 
+        </div>
+
+        <div class="new-create-all_day-field">
+            <%= p.check_box :all_day,class: "new-create-all_day-check-field"%>
+            <p class="new-create-all_day"><%= p.label :all_day ,"終日の場合はチェックを入れてください" %></p>
+        </div>
+
+        <div class="new-create-schedule_memo-field">
+            <p class="new-create-schedule_memo"><%= p.label :schedule_memo ,"スケジュールメモ" %></p>
+            <%= p.text_area :schedule_memo ,placeholder: "ここにメモを入力してね",class: "new-create-schedule_memo-write-field" %>
+            <%= render "shared/error_messages", obj: @post, attribute: :schedule_memo %> 
+        </div>
+
+        <div class="new-create-submit-or-cancel">
+            <span class="new-create-cancel-background"><%= link_to "キャンセル", :posts,class: "new-create-cancel" %></span>
+            <span><%= p.submit "登録完了する",class: "new-create-submit" %></span>  
+        </div>
+    </div>
+</main>
 <% end %>
