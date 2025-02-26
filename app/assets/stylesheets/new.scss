@@ -1,0 +1,145 @@
+//新規予定の部分
+.new-heading-title-area {
+    height: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.new-heading-title {
+    top: 20px;
+    position: relative;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+}
+//入力フィールド
+.new-create-all-field {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #f9ecd5;
+    height: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+//タイトル部分
+.new-create-title-field {
+    max-width: 520px;
+    margin-left: 40px;
+    margin-right: 40px;
+    top: 20px;
+    position: relative;
+}
+.new-create-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 15px;
+}
+.new-create-title-write-field {
+    min-width: 520px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px;
+}
+//開始日部分
+.new-create-start_date-field {
+    position: relative;
+    top: 40px;
+    left: 40px;
+    width: 220px;
+}
+.new-create-start_date {
+    margin: 0;
+    font-weight: bold;
+    font-size: 15px;
+}
+.new-create-start_date-pick-field {
+    width: 220px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px;
+}
+//終了日部分
+.new-create-end_date-field {
+    width: 220px;
+    position: relative;
+    left: 340px;
+    top: -23px;
+}
+.new-create-end_date {
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+.new-create-end_date-pick-field {
+    min-width: 220px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px;
+}
+//終日部分
+.new-create-all_day-field {
+    margin-left: 40px;
+    width: 320px;
+}
+.new-create-all_day {
+    margin: 0;
+    font-size: 15px;
+    position: relative;
+    left: 5px;
+    top: -1px;
+}
+//スケジュールメモ部分
+.new-create-schedule_memo-field {
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 520px;
+    height: 180px;
+    position: relative;
+    top: 10px;
+}
+.new-create-schedule_memo {
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+.new-create-schedule_memo-write-field {
+    width: 520px;
+    height: 150px;
+}
+//キャンセルと登録ボタン部分
+.new-create-submit-or-cancel {
+    height: 50px;
+    position: relative;
+    top: 40px;
+}
+.new-create-cancel-background {
+    display: block;
+    width: 110px;
+    height: 40px;
+    background-color: white;
+    border: solid 1px;
+    border-radius: 5px;
+    position: absolute;
+    left: 330px;
+}
+.new-create-cancel {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    position: relative;
+    left: 15px;
+    top: 7px;
+}
+.new-create-submit {
+    font-size: 15px;
+    height: 40px;
+    width: 110px;
+    font-weight: bold;
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+    position: relative;
+    left: 450px;
+}

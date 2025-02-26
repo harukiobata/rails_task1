@@ -1,0 +1,70 @@
+//indexリンクについて   設定：中央700px固定
+.show-index-link-div {
+    margin-top: 15px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.show-index-link {
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+//titleとeditリンクについて　設定：中央700px固定
+.show-title-and-edit-link {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.show-title-and-edit-link-div {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    padding-left: 10px;
+    height: 50px;
+    position: relative;
+}
+.show-title {
+    font-size: 20px;
+    padding-top: 6px;
+}
+.show-edit-link {
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    top: 5px;
+    right: -15px;
+    color: blue;
+}
+.bi-pencil {
+    color: blue;
+    position: relative;
+    top: 5px;
+    right: -12px;
+}
+.show-edit-link-area {
+    border: 2px solid blue;
+    width: 80px;
+    height: 40px;
+    border-radius: 7px;
+    position: relative;
+    right: 7px;
+}
+//tableについて  設定：中央７００px固定（700以下になると右から縮小)
+.show-table {
+    max-width: 700px;
+    overflow-x: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} 
+.show-table-th {
+    font-size: 13px;
+    text-align: left;
+    max-width: 120px;
+}
+.show-table-td {
+    min-width: 570px;
+}
