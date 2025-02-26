@@ -1,47 +1,59 @@
-<h3>予定を編集して下さい</h3>
-<% if flash[:notice] %>
-    <p class="notice"><%= flash[:notice] %></p>
-<% end %>
-<%= form_with model: @post do |p| %>
-    <table>
-        <tr>
-            <th><%= p.label :title ,"タイトル" %></th>
-            <td><%= p.text_field :title  %>
-            <%= render "shared/error_messages", obj: @post, attribute: :title %>
-            </td>
-        </tr>
-
-        <tr>
-            <th><%= p.label :start_date ,"開始日" %></th>
-            <td><%= p.date_field :start_date,id: "start_date" %>
-            <%= render "shared/error_messages", obj: @post, attribute: :start_date %>
-            </td>
-        </tr>
-
-        <tr>
-            <th><%= p.label :end_date ,"終了日" %></th>
-            <td><%= p.date_field :end_date,id: "end_date" %>
-            <%= render "shared/error_messages", obj: @post, attribute: :end_date %>
-            </td>
-        </tr>
-
-        <tr>
-            <th><%= p.label :all_day ,"終日の場合はチェックを入れて下さい" %></th>
-            <td><%= p.check_box :all_day %></td>
-        </tr>
-
-        <tr>
-            <th><%= p.label :schedule_memo ,"スケジュールメモ" %></th>
-            <td><%= p.text_area :schedule_memo %>
-            <%= render "shared/error_messages", obj: @post, attribute: :schedule_memo %>
-            </td>
-        <tr>
-    </table>
-
-    <div>
-        <ul>
-            <li><%= p.submit "編集を完了する" %></li>
-            <li><%= link_to "予定一覧に戻る", :posts %></li>
-        </ul>
+<header>
+  <div class="first-page-name-area">
+    <h3 class="first-page-name">スケジュール管理アプリ</h3>
+  </div>
+</header>
+<main>
+    <!-- モーダルのHTML部分 -->
+    <div class="modal" id="errorModal2" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="errorModalLabel"><%= flash[:error] %></h5>
+                </div>
+                <div class="modal-body" id="errorMessageContent">
+                <!-- エラーメッセージがここに表示されます -->
+                <%= render "shared/error_messages", obj: @post %>  <!-- エラーメッセージのパーシャル -->
+                </div>
+            </div>
+        </div>
     </div>
-<% end %>
+    <div class="edit-heading-title-area">
+        <h5 class="edit-heading-title">予定を編集して下さい</h5>
+    </div>
+    <div class="edit-create-all-field">
+
+        <%= form_with model: @post do |p| %>
+
+        <div class="edit-create-title-field">
+            <span class="edit-create-title"><%= p.label :title, "タイトル" %></span>
+            <%= p.text_field :title, placeholder: "ここにタイトルを入力してね", class: "edit-create-title-write-field" %>
+        </div>
+
+        <div class="edit-create-start_date-field">
+            <span class="edit-create-start_date"><%= p.label :start_date, "開始日" %></span>
+            <%= p.date_field :start_date, id: "start_date", class: "edit-create-start_date-pick-field"%>
+        </div>
+
+        <div class="edit-create-end_date-field">
+            <span class="edit-create-end_date"><%= p.label :end_date ,"終了日" %></span>
+            <%= p.date_field :end_date, id: "end_date", class: "edit-create-end_date-pick-field"%>
+        </div>
+
+        <div class="edit-create-all_day-field">
+            <%= p.check_box :all_day, class: "edit-create-all_day-check-field"%>
+            <span class="edit-create-all_day"><%= p.label :all_day ,"終日の場合はチェックを入れて下さい" %></span>
+        </div>
+
+        <div class="edit-create-schedule_memo-field">
+            <span class="edit-create-schedule_memo"><%= p.label :schedule_memo, "スケジュールメモ" %></span>
+            <%= p.text_area :schedule_memo, placeholder: "ここにメモを入力してね", class: "edit-create-schedule_memo-write-field"%>
+        </div>
+
+        <div class="edit-create-submit-or-cancel">
+            <span class="edit-create-cancel-background"><%= link_to "キャンセル", :posts, class: "edit-create-cancel" %></span>
+            <span><%= p.submit "編集完了", class: "edit-create-submit" %></span>
+        </div>
+        <% end %>
+    </div>
+</main>
