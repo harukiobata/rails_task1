@@ -4,45 +4,50 @@
   </div>
 </header>
 <main> 
+    <!-- モーダルのHTML部分 -->
     <div class="new-heading-title-area">
+        <div class="modal" id="errorModal2" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="errorModalLabel"><%= flash[:error] %></h5>
+                    </div>
+                    <div class="modal-body" id="errorMessageContent">
+                        <!-- エラーメッセージがここに表示されます -->
+                        <%= render "shared/error_messages", obj: @post %>  <!-- エラーメッセージのパーシャル -->
+                    </div>
+                </div>
+            </div>
+        </div>
         <h5 class="new-heading-title">予定の新規追加</h5>
     </div>
-    <div>
-        <% if flash[:notice] %>
-            <p class="notice"><%= flash[:notice] %></p>
-        <% end %>
-    </div>  
     <div class="new-create-all-field">
 
         <%= form_with model: @post do |p| %>
 
         <div class="new-create-title-field">
-            <p class="new-create-title"><%= p.label :title ,"タイトル" %></p>
+            <span class="new-create-title"><%= p.label :title ,"タイトル*" %></span>
             <%= p.text_field :title ,placeholder: "ここにタイトルを入力してね" ,class:"new-create-title-write-field"%>
-            <%= render "shared/error_messages", obj: @post, attribute: :title %> 
         </div>
 
         <div class="new-create-start_date-field">
-            <p class="new-create-start_date"><%= p.label :start_date ,"開始日" %></p>
+            <span class="new-create-start_date"><%= p.label :start_date ,"開始日*" %></span>
             <%= p.date_field :start_date ,id: "start_date",class: "new-create-start_date-pick-field"%>
-            <%= render "shared/error_messages", obj: @post, attribute: :start_date %> 
         </div>
 
         <div class="new-create-end_date-field">
-            <p class="new-create-end_date"><%= p.label :end_date ,"終了日" %></p>
+            <span class="new-create-end_date"><%= p.label :end_date ,"終了日*" %></span>
             <%= p.date_field :end_date ,id: "end_date",class: "new-create-end_date-pick-field"%>
-            <%= render "shared/error_messages", obj: @post, attribute: :end_date %> 
         </div>
 
         <div class="new-create-all_day-field">
             <%= p.check_box :all_day,class: "new-create-all_day-check-field"%>
-            <p class="new-create-all_day"><%= p.label :all_day ,"終日の場合はチェックを入れてください" %></p>
+            <span class="new-create-all_day"><%= p.label :all_day ,"終日の場合はチェックを入れてください" %></span>
         </div>
 
         <div class="new-create-schedule_memo-field">
-            <p class="new-create-schedule_memo"><%= p.label :schedule_memo ,"スケジュールメモ" %></p>
+            <span class="new-create-schedule_memo"><%= p.label :schedule_memo ,"スケジュールメモ" %></span>
             <%= p.text_area :schedule_memo ,placeholder: "ここにメモを入力してね",class: "new-create-schedule_memo-write-field" %>
-            <%= render "shared/error_messages", obj: @post, attribute: :schedule_memo %> 
         </div>
 
         <div class="new-create-submit-or-cancel">

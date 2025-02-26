@@ -1,4 +1,4 @@
-
+//新規予定の部分
 .new-heading-title-area {
     height: 60px;
     max-width: 600px;
@@ -12,6 +12,7 @@
     font-size: 20px;
     margin: 0;
 }
+//入力フィールド
 .new-create-all-field {
     max-width: 600px;
     margin-left: auto;
@@ -19,7 +20,9 @@
     background: #f9ecd5;
     height: 500px;
     border-radius: 10px;
+    position: relative;
 }
+//タイトル部分
 .new-create-title-field {
     max-width: 520px;
     margin-left: 40px;
@@ -38,6 +41,7 @@
     border-radius: 5px;
     border: solid 1px;
 }
+//開始日部分
 .new-create-start_date-field {
     position: relative;
     top: 40px;
@@ -55,11 +59,12 @@
     border-radius: 5px;
     border: solid 1px;
 }
+//終了日部分
 .new-create-end_date-field {
     width: 220px;
     position: relative;
     left: 340px;
-    top: -23px;
+    top: -24px;
 }
 .new-create-end_date {
     margin: 0;
@@ -72,6 +77,7 @@
     border-radius: 5px;
     border: solid 1px;
 }
+//終日部分
 .new-create-all_day-field {
     margin-left: 40px;
     width: 320px;
@@ -80,15 +86,17 @@
     margin: 0;
     font-size: 15px;
     position: relative;
-    left: 20px;
-    top: -24px;
-    width: 280px;
+    left: 5px;
+    top: -1px;
 }
+//スケジュールメモ部分
 .new-create-schedule_memo-field {
     margin-left: 40px;
     margin-right: 40px;
     width: 520px;
     height: 180px;
+    position: relative;
+    top: 10px;
 }
 .new-create-schedule_memo {
     margin: 0;
@@ -99,10 +107,11 @@
     width: 520px;
     height: 150px;
 }
+//キャンセルと登録ボタン部分
 .new-create-submit-or-cancel {
     height: 50px;
     position: relative;
-    top: 20px;
+    top: 40px;
 }
 .new-create-cancel-background {
     display: block;

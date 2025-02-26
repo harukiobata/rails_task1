@@ -13,8 +13,8 @@ window.jQuery = $;
 import 'bootstrap'
 import '../stylesheets/application.scss'
 import './delete_modal'
-import './date_calender'
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import './error_modal_and_calender'
 
 Rails.start()
 Turbolinks.start()

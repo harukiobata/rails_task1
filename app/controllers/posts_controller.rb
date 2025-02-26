@@ -14,7 +14,7 @@ class PostsController < ApplicationController
       flash[:notice] = "新しい予定を追加しました。"
       redirect_to :posts
     else
-      flash[:notice] = "スケジュールの登録に失敗しました。"
+      flash[:error] = "スケジュールの登録に失敗しました。"
       render "new"
     end
   end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
       flash[:notice] = "#{@post.id}の予定が変更されました。"
       redirect_to :posts
     else
-      flash[:notice] = "予定の登録に失敗しました。"
+      flash[:error] = "予定の登録に失敗しました。"
       render "edit"
     end
   end
